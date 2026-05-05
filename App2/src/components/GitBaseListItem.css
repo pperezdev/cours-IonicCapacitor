@@ -1,0 +1,100 @@
+#git-base-list-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+}
+
+#git-base-list-item ion-label {
+  margin-top: 12px;
+  margin-bottom: 12px;
+
+  overflow: hidden;
+}
+
+#git-base-list-item ion-label h2 {
+  font-weight: 600;
+  margin: 0;
+
+  /**
+   * With larger font scales
+   * the date/time should wrap to the next
+   * line. However, there should be
+   * space between the name and the date/time
+   * if they can appear on the same line.
+   */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#git-base-list-item p {
+  white-space: nowrap;
+  width: 95%;
+}
+
+#git-base-list-item .date {
+  align-items: center;
+  display: flex;
+}
+
+#git-base-list-item ion-icon {
+  color: #c9c9ca;
+}
+
+#git-base-list-item ion-note {
+  font-size: 0.9375rem;
+  margin-right: 8px;
+  font-weight: normal;
+}
+
+#git-base-list-item ion-note.md {
+  margin-right: 14px;
+}
+
+#git-base-list-item .dot {
+  display: block;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  align-self: start;
+  margin: 16px 10px 16px 16px;
+}
+
+#git-base-list-item .dot-unread {
+  background: var(--ion-color-primary);
+}
+
+#git-base-list-item .languages-bar {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #e5e7eb;
+  margin: 8px 0 10px;
+  display: flex;
+}
+
+#git-base-list-item .language-segment {
+  height: 100%;
+  display: block;
+}
+
+.language-segment:hover {
+  filter: brightness(0.8);
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+#git-base-list-item .language-note {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+#git-base-list-item .language-color-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+

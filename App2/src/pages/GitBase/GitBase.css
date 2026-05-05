@@ -1,0 +1,4 @@
+.git-base-fixed-panel {
+  background: var(--ion-background-color);
+  border-bottom: 1px solid var(--ion-color-light-shade);
+}
