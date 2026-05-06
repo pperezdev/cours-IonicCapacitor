@@ -1,6 +1,6 @@
 import useGitBase from '../../hooks/useGitBase';
 import GitPersonItem from '../../components/GitPersonItem';
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { 
   IonPage, 
   IonHeader, 
@@ -54,10 +54,15 @@ const GitBase = () => {
     e.detail.complete();
   };
 
+  const hasFetchedDefaultUser = useRef(false);
+
   useEffect(() => {
-    if(defaultUsername && defaultUsername.trim() !== '') {
-      handleFetchData(defaultUsername);
+    if (hasFetchedDefaultUser.current || defaultUsername.trim() === '') {
+      return;
     }
+
+    hasFetchedDefaultUser.current = true;
+    void handleFetchData(defaultUsername);
   }, [defaultUsername, handleFetchData]);
 
   return (
@@ -86,7 +91,7 @@ const GitBase = () => {
         </IonHeader>
 
         <IonList>
-          {gitData.map(repo => <GitBaseListItem key={repo.name} repo={repo} />)}
+          {gitData.map((repo, index) => <GitBaseListItem key={index} repo={repo} />)}
         </IonList>
       </IonContent>
     </IonPage>

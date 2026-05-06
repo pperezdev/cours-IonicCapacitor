@@ -23,7 +23,7 @@ const useGitBase = () => {
   };
 
   const fetchData = async (usernameParam?: string): Promise<FetchDataResult> => {
-    const username = (usernameParam ?? defaultUsername).trim();
+    const username = (usernameParam?.trim() || defaultUsername.trim());
 
     if (!username) {
       return { status: 'empty_username' };
